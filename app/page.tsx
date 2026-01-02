@@ -36,11 +36,11 @@ export default function Home() {
          }}
    >
     {/* <MyGrid className="w-10 h-12"/> */}
-    <div className="w-4xl bg-white h-screen border border-black/5 p-6 grid grid-cols-4">
+    <div className="w-4xl bg-white border border-neutral-200 p-6 grid grid-cols-4 gap-2">
       {
         components.map((comp, index) => (
-          <div key={index} className="flex flex-col items-center gap-16 h-36">
-            <p className="tracking-tight">{comp.title}</p>
+          <div key={index} className="flex flex-col items-center p-8 border-[0.5] border-neutral-200">
+            {/* <p className="tracking-tight text-sm">{comp.title}</p> */}
             {comp.comp}
           </div>
         ))
