@@ -19,7 +19,7 @@ export default function Icon(){
                 
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 />
 
 
