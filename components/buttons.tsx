@@ -12,7 +12,7 @@ export  function SpringButton() {
       onClick={() => setAlarm(p => !p)}
       animate={{ width: alarm ? 110 : 44 }}
       transition={{ type: "spring", stiffness: 800, damping: 20}}
-      className="relative border border-black/10  h-11 rounded-3xl flex items-center overflow-hidden outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] cursor-pointer"
+      className="relative border border-black/10  h-11 rounded-3xl flex items-center overflow-hidden outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] cursor-pointer hover:bg-neutral-50"
     >
       {/* Left anchor */}
       <div className="p-2.25 text-black/80 ">
@@ -43,7 +43,7 @@ export function SelectorButton(){
   return (
    <div className="relative  h-fit  w-fit ">
     <motion.button
-    className="p-2 border rounded-full border-black/10 cursor-pointer"
+    className="p-2 border-[0.5px] rounded-full border-black/10 cursor-pointer hover:bg-neutral-50"
     whileTap={{scale:0.90}}
     transition={{ type: "spring", stiffness: 800, damping: 20}}
     onClick={() => setIsVisible(prev => !prev)}
@@ -57,36 +57,36 @@ export function SelectorButton(){
 {
       isVisible && (
         <>
-          <motion.button className="absolute -top-5 -left-10 p-2 border rounded-full border-black/10 h-fit w-fit cursor-pointer"
+          <motion.button className="absolute -top-5 -left-10 p-2 border-[0.5px] rounded-full border-black/10 h-fit w-fit cursor-pointer "
       key={1}
       whileHover={{scale:1.10}}
       
       initial={{translateY:20, translateX:10, opacity:0}}
       animate={{translateY:0, translateX:0, opacity:1}}
       exit={{translateY:20, translateX:10, opacity:0}}
-      transition={{ type:"spring", stiffness: 800, damping: 20}}
+      transition={{ type:"spring", stiffness: 800, damping: 30}}
      >
         <Music4 size={16} />
       </motion.button>
 
-       <motion.button className="absolute -top-10 right-0 p-2 border rounded-full border-black/10 h-fit w-fit cursor-pointer"
+       <motion.button className="absolute -top-10 right-0 p-2 border-[0.5px] rounded-full border-black/10 h-fit w-fit cursor-pointer"
       key={2}  
       whileHover={{scale:1.10}}
         initial={{translateY:30, opacity:0}}
       animate={{translateY:0, opacity:1}}
         exit={{translateY:30, opacity:0}}
-    transition={{  type:"spring", stiffness: 800, damping: 20,delay:0.1}}
+    transition={{  type:"spring", stiffness: 800, damping: 30,delay:0.1}}
       >
         <Sprout size={16}/>
       </motion.button>
 
-     <motion.button className="absolute -top-5 -right-10 p-2 border rounded-full border-black/10 h-fit w-fit cursor-pointer"
+     <motion.button className="absolute -top-5 -right-10 p-2 border-[0.5px] rounded-full border-black/10 h-fit w-fit cursor-pointer"
     key={3}
       whileHover={{scale:1.10}}
      initial={{translateY:20, translateX:-10, opacity:0}}
       animate={{translateY:0, translateX:0, opacity:1}}
         exit={{translateY:20, translateX:-10, opacity:0}}
-    transition={{ type:"spring", stiffness: 800, damping: 20,delay:0.2}}>
+    transition={{ type:"spring", stiffness: 800, damping: 30,delay:0.2}}>
         <Send size={16} />
       </motion.button>
         </>
