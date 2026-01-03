@@ -20,20 +20,26 @@ export default function Home() {
       comp: <SelectorButton />,
     },
     {
-      title: "Signature",
-      comp: <Text />,
-    },
-    {
-      title: "Icon",
-      comp: <Icon />,
-    },
-    {
       title: "Icon",
       comp: <Tabs />,
     },
     {
       title: "Icon",
       comp: <ProgressBar />,
+    },
+  ];
+
+  const icons = [
+    {
+      title: "Icon",
+      comp: <Icon />,
+    },
+  ];
+
+  const texts = [
+    {
+      title: "Signature",
+      comp: <Text />,
     },
   ];
   return (
@@ -60,6 +66,39 @@ export default function Home() {
         ))}
       </div>
 
+      <div
+        className="h-17 w-full border border-neutral-300"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(30deg, transparent, transparent 30px, rgba(0,0,0,0.1) 30px, rgba(0,0,0,0.1) 31px)",
+        }}
+      />
+
+      <div className="w-full bg-white p-6 grid grid-cols-4 gap-2 border border-b-0 border-t-0 border-l-[#FE4400] border-r-[#FE4400]  grid-rows-[repeat(auto-fit,minmax(00px,1fr))]">
+        {icons.map((comp, index) => (
+          <div key={index} className="flex flex-col items-center p-8 ">
+            {/* <p className="tracking-tight text-sm">{comp.title}</p> */}
+            {comp.comp}
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="h-17 w-full border border-neutral-300"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(30deg, transparent, transparent 30px, rgba(0,0,0,0.1) 30px, rgba(0,0,0,0.1) 31px)",
+        }}
+      />
+
+      <div className="w-full bg-white p-6 grid grid-cols-4 gap-2 border border-b-0 border-t-0 border-l-[#FE4400] border-r-[#FE4400]  grid-rows-[repeat(auto-fit,minmax(00px,1fr))]">
+        {texts.map((comp, index) => (
+          <div key={index} className="flex flex-col items-center p-8 ">
+            {/* <p className="tracking-tight text-sm">{comp.title}</p> */}
+            {comp.comp}
+          </div>
+        ))}
+      </div>
       <div
         className="h-17 w-full border border-neutral-300"
         style={{
