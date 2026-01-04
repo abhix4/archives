@@ -1,5 +1,5 @@
 import { SelectorButton, SpringButton } from "@/components/buttons";
-import { AlarmIcon, NextIcon } from "@/components/icon";
+import { AlarmIcon, ChargingIcon, NextIcon } from "@/components/icon";
 import OutlineText from "@/components/outline-text";
 import ProgressBar from "@/components/progess-svg";
 import ScrollingText from "@/components/scrolling-text";
@@ -61,6 +61,10 @@ export default function Home() {
     {
       title: " next icons",
       comp: <NextIcon />,
+    },
+    {
+      title: " next icons",
+      comp: <ChargingIcon />,
     },
   ];
 

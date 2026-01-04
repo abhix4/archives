@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 
 export function AlarmIcon() {
   const [alarmSet, setAlarmSet] = useState<boolean>(false);
@@ -27,7 +27,13 @@ export function AlarmIcon() {
           d={alarmSet ? D_PATH1 : D_PATH2}
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{
+            duration: 0.2,
+            type: "spring",
+            stiffness: 600,
+            damping: 25,
+            mass: 2,
+          }}
         />
 
         {alarmSet ? <motion.path d="M5 3 2 6" /> : <path d="M5 3 2 6" />}
@@ -75,6 +81,64 @@ export function NextIcon() {
         }}
         className="rotate-360"
         d="M14 12H5"
+      />
+    </motion.svg>
+  );
+}
+
+export function ChargingIcon() {
+  const [hovered, setHovered] = useState(false);
+
+  const variant: Variants = {
+    hidden: {},
+    hover: {
+      transition: {
+        type: "spring",
+        stiffness: 800,
+        damping: 20,
+      },
+    },
+  };
+
+  const chargeVariant = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+      scale: 0.2,
+      transition: { duration: 0.1 },
+    },
+    hover: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.1 },
+    },
+  };
+  return (
+    <motion.svg
+      variants={variant}
+      initial="hidden"
+      whileHover="hover"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-battery-charging-icon lucide-battery-charging"
+      onMouseEnter={() => setHovered((prev) => !prev)}
+      onMouseLeave={() => setHovered((prev) => !prev)}
+    >
+      <motion.path variants={chargeVariant} d="m11 7-3 5h4l-3 5" />
+      <motion.path
+        d={`${hovered ? "M14.856 " : "M4"} 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935`}
+      />
+      <path d="M22 14v-4" />
+      <motion.path
+        d={` ${hovered ? " M5.14" : "M13"} 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936`}
       />
     </motion.svg>
   );
